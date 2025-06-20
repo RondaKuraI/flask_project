@@ -1,11 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__, template_folder='templates')
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-        mylist = [10, 20, 30, 40, 50]
-        return render_template('index.html', mylist=mylist)
+        if request.method == 'GET':
+                return render_template('index.html')
+        elif request.method == 'POST':
+                username = request.form.get('username')
+                password = request.form.get('password')
+
 
 @app.route('/other')
 def other():

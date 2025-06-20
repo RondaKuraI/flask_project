@@ -3,14 +3,11 @@
 
 {% block content %}
 
-<h1>Hello World</h1>
-{% for item in mylist %}
-        {% if item == 30 %}
-                <li style="color:aqua">{{ item }}</li>
-        {% else %}
-                <li>{{ item }}</li>
-        {% endif %}
-{% endfor %}
-<p>{{ mylist }}</p>
+        <h1>Hello World</h1>
+        <form method="POST" action="{{ url_for('index') }}">
+                <input type="text" name="username" placeholder="Username"><br>
+                <input type="password" name="password" placeholder="Password"><br>
+                <input type="submit" value="Login">
+        </form>
 
 {% endblock %}
