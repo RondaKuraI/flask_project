@@ -3,20 +3,21 @@ import uuid
 import pandas as pd
 from flask import Flask, render_template, request, Response, send_from_directory, jsonify
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='static', static_url_path='/')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-        if request.method == 'GET':
-                return render_template('index.html')
-        elif request.method == 'POST':
-                username = request.form.get('username')
-                password = request.form.get('password')
+        return render_template('index.html')
+        # if request.method == 'GET':
+        #         return render_template('index.html')
+        # elif request.method == 'POST':
+        #         username = request.form.get('username')
+        #         password = request.form.get('password')
 
-                if username == 'neuralnine' and password == 'password':
-                        return 'Success'
-                else:
-                        return 'Failed'
+        #         if username == 'neuralnine' and password == 'password':
+        #                 return 'Success'
+        #         else:
+        #                 return 'Failed'
                 
 @app.route('/file_upload', methods=['POST'])
 def file_upload():
