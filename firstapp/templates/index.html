@@ -4,58 +4,10 @@
 {% block content %}
 
         <h1>Hello World</h1>
-        <!-- <form method="POST" action="{{ url_for('index') }}">
-                <input type="text" name="username" placeholder="Username"><br><br>
-                <input type="password" name="password" placeholder="Password"><br><br>
-                <input type="submit" value="Login">
-        </form>
-        <br>
-        <h1>File Upload</h1>
-        <form method="POST" action="{{ url_for('file_upload') }}" enctype="multipart/form-data">
-               <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain" required="required"> 
-               <input type="submit" value="Upload File">
-        </form>
-        <br>
-        <h1>Convert to CSV</h1>
-        <form method="POST" action="{{ url_for('convert_csv') }}" enctype="multipart/form-data">
-               <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" required="required"> 
-               <input type="submit" value="Upload File">
-        </form>
-        <br>
-        <h1>Convert to CSV Two</h1>
-        <form method="POST" action="{{ url_for('convert_csv_two') }}" enctype="multipart/form-data">
-               <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" required="required"> 
-               <input type="submit" value="Upload File">
-        </form>
-
-        <h1>JavaScript JSON Request</h1>
-        <button id="post_button">Send POST Request</button>
-
-        <script type="text/javascript">
-              const postButton = document.getElementById('post_button');
-
-              const jsonData = {name: 'Mike', greeting: 'Hello'}
-
-              postButton.addEventListener('click', () => {
-                     fetch('{{ url_for("handle_post") }}', {
-                            method: 'POST',
-                            headers: {
-                                   'Content-Type': 'application/json; charset=utf-8'
-                            },
-                            body: JSON.stringify(jsonData)
-                     })
-                            .then(response => response.json())
-                            .then(data => console.log('Success:', data))
-                            .catch((error) => {
-                            console.error('Error:', error)
-                     });
-              });
-
-        </script> -->
-
-        <a href="#" class="btn btn-primary">Button Text</a>
-
-        <p class="special">Hello</p>
+ 
+        <p>{{ message }}</p>
+        
+        <a href="{{ url_for('set_data') }}" class="btn btn-dark">Set Session Data</a>
 
         <script src="/js/hello.js"></script>
 
