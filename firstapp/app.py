@@ -18,6 +18,17 @@ def set_data():
 
 @app.route('/get_data')
 def get_data():
+        if 'name' in session.keys() and 'other' in session.keys():
+                name = session['name']
+                other = session['other']
+                return render_template('index.html', message=f'Name: {name}, Other: {other}')
+        else:
+                return render_template('index.html', message='No session found.')
+        
+@app.route('/clear_session')
+def clear_session():
+        session.clear()
+        return render_template('index.html', message='Session cleared.')
         
 
 

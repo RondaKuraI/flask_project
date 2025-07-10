@@ -8,7 +8,9 @@
         <p>{{ message }}</p>
         
         <a href="{{ url_for('set_data') }}" class="btn btn-dark">Set Session Data</a>
+        <a href="{{ url_for('get_data') }}" class="btn btn-danger">Get Session Data</a>
+        <a href="{{ url_for('clear_session') }}" class="btn btn-primary">Clear Session Data</a>
 
-        <script src="/js/hello.js"></script>
+        <!-- <script src="/js/hello.js"></script> -->
 
 {% endblock %}
